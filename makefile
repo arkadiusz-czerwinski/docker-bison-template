@@ -1,10 +1,11 @@
+
 .PHONY: clean
 
 __start__: compiler
 	./compiler
 
 compiler: lex.yy.c parser.tab.c
-	g++ -std=c++14 parser.tab.c lex.yy.c -o compiler
+	g++ -std=c++20 parser.tab.c lex.yy.c -o compiler
 
 parser.tab.c: parser.y
 	bison parser.y --defines
